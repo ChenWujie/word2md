@@ -64,10 +64,10 @@ def write_func(text):
                 temp = i.group()[1: -1].split(' ')
                 mean.append('*' + temp[0] + '.* ')
                 part_of_speech += '*' + temp[0] + '.* ···  '
-                mean.append(temp[1])
-            all_mean = ' '.join(mean)
-            mem_result = string + en + ' ' + us + ' ' + all_mean + '\n\n'
-            rev_result = string + en + ' ' + us + ' ' + part_of_speech + '\n\n'
+                mean.append(" ".join(temp[1:]))
+            all_mean = '    '.join(mean)
+            mem_result = string + en + ' ' + us + '  ' + all_mean + '\n\n'
+            rev_result = string + en + ' ' + us + '  ' + part_of_speech + '\n\n'
             mem_result = mem_result.replace('（', '(')
             mem_result = mem_result.replace('）', ')')
             rev_result = rev_result.replace('（', '(')
